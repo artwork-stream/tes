@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warung Najwa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #fff5c0, #ffe680);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .hero img {
+      margin-top: 20px;
+    }
+
+    .section-padding {
+      padding: 60px 0;
+    }
+
+    footer {
+      background-color: #ffc107;
+      text-align: center;
+      padding: 20px 0;
+      font-weight: 600;
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-body .btn {
+      margin-top: auto;
+    }
+    
+    .accordion-button {
+      font-weight: 600;
+    }
+
+    .accordion-button:focus {
+      box-shadow: none; !important 
+      outline: none; !important 
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: #ffeeba; !important 
+      color: #000; !important 
+    }
+</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning-subtle shadow-sm sticky-top">
+  <div class="container px-4">
+    <a class="navbar-brand fw-bold text-dark" href="#">Warung Najwa</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#beranda">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#produk">Produk</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#faq">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#testimoni">Testimoni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#kontak">Kontak</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="display-5 fw-bold">WARUNG NAJWA</h1>
+      <p class="lead">Toko Sembako & Kebutuhan Harian</p>
+      <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#promoModal">Lihat Promo</button><br>
+      <img src="https://i.ibb.co/KXg9t5r/sembako.png" width="180" alt="Sembako">
+    </div>
+  </section>
+
+  <!-- Tentang -->
+  <section class="section-padding bg-light" id="tentang">
+    <div class="container text-center">
+      <h2 class="mb-3">Tentang Kami</h2>
+      <p>Warung Najwa adalah toko sembako yang menyediakan berbagai kebutuhan pokok rumah tangga seperti beras, minyak, telur, jajanan anak, dan lainnya dengan harga terjangkau.</p>
+    </div>
+  </section>
+
+  <!-- Produk -->
+  <section class="section-padding" id="produk">
+    <div class="container text-center">
+      <h2 class="mb-4">Produk Kami</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Produk 1 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://i.ibb.co/ZgWjMZz/beras.png" class="card-img-top" alt="Beras">
+            <div class="card-body">
+              <h5 class="card-title">Beras</h5>
+              <p class="card-text">Beras kualitas premium tersedia setiap hari.</p>
+              <button class="btn btn-warning">Beli</button>
+            </div>
+          </div>
+        </div>
+        <!-- Produk 2 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://i.ibb.co/pxsLYp1/minyak.png" class="card-img-top" alt="Minyak">
+            <div class="card-body">
+              <h5 class="card-title">Minyak Goreng</h5>
+              <p class="card-text">Minyak kemasan 1L dan 2L tersedia berbagai merek.</p>
+              <button class="btn btn-warning">Beli</button>
+            </div>
+          </div>
+        </div>
+        <!-- Produk 3 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://i.ibb.co/KrJg3K9/telur.png" class="card-img-top" alt="Telur">
+            <div class="card-body">
+              <h5 class="card-title">Telur Ayam</h5>
+              <p class="card-text">Telur segar isi 10 dan 1 kg tersedia setiap hari.</p>
+              <button class="btn btn-warning">Beli</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri -->
+  <section class="section-padding bg-light" id="galeri">
+    <div class="container text-center">
+      <h2 class="mb-4">Galeri Warung</h2>
+      <div id="carouselGaleri" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner rounded">
+          <div class="carousel-item active">
+            <img src="https://i.ibb.co/gvbSsnM/galeri1.png" class="d-block w-100" alt="Foto 1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.ibb.co/ssHZB7J/galeri2.png" class="d-block w-100" alt="Foto 2">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaleri" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselGaleri" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-padding" id="faq">
+    <div class="container">
+      <h2 class="text-center mb-4">FAQ</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              Metode Pembayaran
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Kami hanya menerima pembayaran secara tunai (cash).
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+              Jam Operasional
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Buka setiap hari pukul 07.00–21.00 WIB.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+              Apakah bisa pesan lewat WhatsApp?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Bisa! Klik tombol "Chat via WhatsApp" di bawah halaman untuk memesan langsung.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni -->
+  <section class="section-padding bg-white" id="testimoni">
+    <div class="container">
+      <h2 class="text-center mb-5">Testimoni Pelanggan</h2>
+      <div class="row g-4">
+        <!-- Testimoni 1 -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100 text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="rounded-circle mx-auto mt-4" alt="Siti Aminah" style="width:100px; height:100px; object-fit:cover; border: 3px solid #ffc107;">
+            <div class="card-body">
+              <h5 class="card-title">Siti Aminah</h5>
+              <p class="card-text">“Belanja di Warung Najwa nyaman dan lengkap. Harga terjangkau dan pelayanannya ramah banget!”</p>
+            </div>
+          </div>
+        </div>
+        <!-- Testimoni 2 -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100 text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="rounded-circle mx-auto mt-4" alt="Budi Santoso" style="width:100px; height:100px; object-fit:cover; border: 3px solid #ffc107;">
+            <div class="card-body">
+              <h5 class="card-title">Budi Santoso</h5>
+              <p class="card-text">“Saya selalu belanja sembako di sini. Barangnya fresh dan lengkap. Bisa pesan via WhatsApp juga!”</p>
+            </div>
+          </div>
+        </div>
+        <!-- Testimoni 3 -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100 text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="rounded-circle mx-auto mt-4" alt="Rina Marlina" style="width:100px; height:100px; object-fit:cover; border: 3px solid #ffc107;">
+            <div class="card-body">
+              <h5 class="card-title">Rina Marlina</h5>
+              <p class="card-text">“Warungnya bersih, barang-barangnya segar, dan lokasinya strategis. Sangat rekomendasi!”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section class="section-padding bg-light" id="kontak">
+    <div class="container">
+      <h2 class="text-center mb-4">Kontak Kami</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+          <div class="d-grid gap-3">
+            <a href="https://wa.me/628129925" target="_blank" class="btn btn-success">Chat via WhatsApp</a>
+            <a href="mailto:warungnajwa@gmail.com" class="btn btn-warning text-dark">Kirim Email</a>
+            <a href="https://www.google.com/maps?q=Jl.+Wanogra+Kolon" target="_blank" class="btn btn-secondary">Lihat Lokasi</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Warung Najwa</p>
+  </footer>
+
+  <!-- Modal Promo -->
+  <div class="modal fade" id="promoModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Promo Spesial</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Belanja minimal 100rb gratis 1L Minyak Goreng! Berlaku hingga akhir bulan.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
