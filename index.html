@@ -2,299 +2,685 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Warung Najwa</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ruang Seduh Walasea - Tempat nongkrong khas Indonesia yang nyaman dan berkesan.">
+  <meta property="og:title" content="Warung Kopi Nusantara">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+  <meta property="og:description" content="Nikmati seduhan kopi, teh dan jamu khas Indonesia dengan cita rasa Nusantara.">
+  <title>Ruang Seduh Walasea</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
 <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
+:root {
+--brown-dark: #4e342e;
+--brown-light: #c8ad7f;
+--cream: #f3e5ab;
+--text-color: #333;
+--font-title: 'Playfair Display', serif;
+--font-body: 'Poppins', sans-serif;
+--gradient: linear-gradient(135deg, #f3e5ab, #c8ad7f,#a67b5b, #c3a18f, #f3e5ab);
+}
 
-    .hero {
-      background: linear-gradient(to right, #fff5c0, #ffe680);
-      padding: 80px 0;
-      text-align: center;
-    }
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .hero img {
-      margin-top: 20px;
-    }
+body {
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.6;
+  background: var(--gradient);
+  color: var(--text-color);
+  text-align: center;
+}
 
-    .section-padding {
-      padding: 60px 0;
-    }
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    footer {
-      background-color: #ffc107;
-      text-align: center;
-      padding: 20px 0;
-      font-weight: 600;
-    }
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  color: var(--brown-dark);
+  margin-bottom: 12px;
+  text-align: center;
+}
 
-    .card-body {
-      display: flex;
-      flex-direction: column;
-    }
+h2 {
+  font-size: 24px;
+  margin: 40px 0 20px;
+}
 
-    .card-body .btn {
-      margin-top: auto;
-    }
-    
-    .accordion-button {
-      font-weight: 600;
-    }
+h3 {
+  font-size: 18px;
+}
 
-    .accordion-button:focus {
-      box-shadow: none; !important 
-      outline: none; !important 
-    }
+p {
+  margin-bottom: 10px;
+  text-align: center;
+}
 
-    .accordion-button:not(.collapsed) {
-      background-color: #ffeeba; !important 
-      color: #000; !important 
-    }
+button {
+  font-size: 14px;
+  background-color: var(--brown-dark);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button i {
+  margin-right: 6px;
+}
+
+button:hover {
+  background-color: var(--brown-light);
+}
+
+/* ===== Layout Sections ===== */
+.hero {
+  padding-top: 80px;
+  padding: 40px 20px;
+}
+
+.hero img {
+  max-height: 220px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== About Section ===== */
+.about-social {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 22px;
+  flex-wrap: wrap;
+}
+
+.about-social a {
+  color: var(--brown-dark);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.about-social a:hover {
+  transform: scale(1.2);
+  color: var(--brown-light);
+}
+
+.about-team {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.about-team h3 {
+  font-family: var(--font-title);
+  margin-bottom: 20px;
+  color: var(--brown-dark);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.team-card {
+  padding: 20px;
+  border: 3px solid var(--brown-dark);
+  border-radius: 12px;
+  background-color: var(--brown-dark);
+  color: var(--cream);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.team-card i {
+  margin-bottom: 10px;
+  color: var(--cream);
+}
+
+.team-card h4 { 
+  color: var(--cream); 
+}
+
+/* ===== Menu Grid ===== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 100%; 
+  padding: 15px;
+  border: 3px solid var(--brown-dark);
+  border-radius: 12px;
+  background: var(--gradient);
+  text-align: center;
+  color: var(--brown-dark);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.menu-card {
+  height: 100%;
+  min-height: 300px; 
+  border-radius: 8px;
+}
+
+.menu-card h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+}
+
+.menu-card p {
+  flex-grow: 1;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.menu-card button {
+  margin-top: auto;
+  border: 3px solid var(--brown-dark);
+  background: var(--brown-dark); 
+  color: var(--brown-light); 
+}
+
+.menu-card button:hover {
+  background-color: #a67b5b; 
+  color: var(--brown-dark); 
+}
+
+/* ===== Testimonial Section ===== */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.testimonial-card {
+  border: 3px solid var(--brown-dark);
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--gradient); 
+}
+
+.testimonial-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+}
+
+/* ===== Faq Section ===== */
+
+.faq-section {
+  overflow-y: auto;
+  max-height: 400px;
+  padding: 40px 20px;
+  color: var(--brown-dark);
+}
+
+.faq-item {
+  border-left: 4px solid var(--brown-dark);
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  background: #fff5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.faq-item:hover {
+  background: #ffeccc;
+}
+
+.faq-question {
+  font-weight: bold;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+  margin-top: 5px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* ===== Contact Form ===== */
+.contact-form-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-form-section h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #5e3c25;
+  font-family: var(--font-title);
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 3px solid var(--brown-dark);
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--brown-dark);
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+.contact-form button {
+  background: var(--brown-dark); 
+  color: var(--cream); 
+  border: 3px solid var(--brown-dark);
+  width: 100%; 
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact-form button:hover {
+  background-color: #a67b5b; 
+  color: var(--brown-dark); 
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: var(--brown-dark);
+  color: var(--cream); 
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9em;
+}
+
+/* ===== Responsive Fixes ===== */
+.navbar {
+  background: var(--brown-dark);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.container-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.brand {
+  font-family: var(--font-title);
+  font-size: 20px;
+  color: var(--cream);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin-top: 15px;
+  margin-right: 5px;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--cream);
+  font-weight: 500;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--cream);
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  margin-right: 15px;
+  color: var(--cream);
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--brown-dark);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .about-social {
+    gap: 25px;
+    font-size: 20px;
+  }
+}
 </style>
 </head>
 <body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-warning-subtle shadow-sm sticky-top">
-  <div class="container px-4">
-    <a class="navbar-brand fw-bold text-dark" href="#">Warung Najwa</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#beranda">Beranda</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#produk">Produk</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#faq">FAQ</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#testimoni">Testimoni</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#kontak">Kontak</a>
-        </li>
+  <header class="navbar">
+  <div class="container-nav">
+    <div class="brand">
+      <p>WALASEA</p>
+    </div>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about"><i class="fas fa-info-circle"></i></a></li>
+        <li><a href="#menu"><i class="fas fa-envelope-open-text"></i></a></li>
+        <li><a href="#testimoni"><i class="fas fa-users"></i></a></li>
+        <li><a href="#faq"><i class="fas fa-comment-dots"></i></a></li>
+        <li><a href="#kontak"><i class="fas fa-envelope"></i></a></li>
       </ul>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
     </div>
   </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1 class="display-5 fw-bold">WARUNG NAJWA</h1>
-      <p class="lead">Toko Sembako & Kebutuhan Harian</p>
-      <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#promoModal">Lihat Promo</button><br>
-      <img src="https://i.ibb.co/KXg9t5r/sembako.png" width="180" alt="Sembako">
+  </header>
+  
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <img src="https://picsum.photos/seed/kopi/1200/500" alt="Banner">
+      <h1>RUANG SEDUH</h1>
+      <p>Nikmati seduhan kopi, teh dan jamu, khas Indonesia dengan cita rasa Nusantara.</p>
     </div>
-  </section>
+  </header>
 
-  <!-- Tentang -->
-  <section class="section-padding bg-light" id="tentang">
-    <div class="container text-center">
-      <h2 class="mb-3">Tentang Kami</h2>
-      <p>Warung Najwa adalah toko sembako yang menyediakan berbagai kebutuhan pokok rumah tangga seperti beras, minyak, telur, jajanan anak, dan lainnya dengan harga terjangkau.</p>
+  <!-- Tentang Kami -->
+  <section class="about-section" id="about">
+    <h2><i class="fas fa-store"></i> Tentang Kami</h2>
+    <p>
+      Ruang Seduh Walasea berdiri sejak 2020 sebagai tempat berkumpul hangat dengan sajian kopi, teh, dan jamu khas Nusantara.
+      Kami terus berkembang menjadi tempat favorit masyarakat untuk menikmati minuman berkualitas dengan pelayanan ramah dan suasana nyaman.
+    </p>
+
+    <div class="about-social">
+      <a href="https://wa.me/6281234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:info@walasea.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://goo.gl/maps/xyz" target="_blank" aria-label="Lokasi"><i class="fas fa-map-marker-alt"></i></a>
+      <a href="https://instagram.com/walasea" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
-  </section>
 
-  <!-- Produk -->
-  <section class="section-padding" id="produk">
-    <div class="container text-center">
-      <h2 class="mb-4">Produk Kami</h2>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <!-- Produk 1 -->
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://i.ibb.co/ZgWjMZz/beras.png" class="card-img-top" alt="Beras">
-            <div class="card-body">
-              <h5 class="card-title">Beras</h5>
-              <p class="card-text">Beras kualitas premium tersedia setiap hari.</p>
-              <button class="btn btn-warning">Beli</button>
-            </div>
-          </div>
+    <div class="about-team">
+      <div class="team-grid">
+        <div class="team-card">
+          <i class="fas fa-cash-register fa-2x"></i>
+          <h4>Kasir</h4>
+          <p>Nur Aini</p>
         </div>
-        <!-- Produk 2 -->
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://i.ibb.co/pxsLYp1/minyak.png" class="card-img-top" alt="Minyak">
-            <div class="card-body">
-              <h5 class="card-title">Minyak Goreng</h5>
-              <p class="card-text">Minyak kemasan 1L dan 2L tersedia berbagai merek.</p>
-              <button class="btn btn-warning">Beli</button>
-            </div>
-          </div>
+        <div class="team-card">
+          <i class="fas fa-mug-hot fa-2x"></i>
+          <h4>Barista</h4>
+          <p>Rizky Pratama</p>
         </div>
-        <!-- Produk 3 -->
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://i.ibb.co/KrJg3K9/telur.png" class="card-img-top" alt="Telur">
-            <div class="card-body">
-              <h5 class="card-title">Telur Ayam</h5>
-              <p class="card-text">Telur segar isi 10 dan 1 kg tersedia setiap hari.</p>
-              <button class="btn btn-warning">Beli</button>
-            </div>
-          </div>
+        <div class="team-card">
+          <i class="fas fa-concierge-bell fa-2x"></i>
+          <h4>Pelayan</h4>
+          <p>Siti Marwah</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Galeri -->
-  <section class="section-padding bg-light" id="galeri">
-    <div class="container text-center">
-      <h2 class="mb-4">Galeri Warung</h2>
-      <div id="carouselGaleri" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner rounded">
-          <div class="carousel-item active">
-            <img src="https://i.ibb.co/gvbSsnM/galeri1.png" class="d-block w-100" alt="Foto 1">
-          </div>
-          <div class="carousel-item">
-            <img src="https://i.ibb.co/ssHZB7J/galeri2.png" class="d-block w-100" alt="Foto 2">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaleri" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselGaleri" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
+  <!-- Menu Section -->
+  <section class="menu-section" id="menu">
+    <h2><i class="fas fa-mug-hot"></i> Menu Kopi</h2>
+    <div class="menu-grid">
+      <!-- Kopi -->
+      <div class="menu-card">
+        <img src="https://picsum.photos/seed/kopi1/400/300" alt="Kopi Tubruk">
+        <h3>Kopi Tubruk</h3>
+        <p>Kopi tradisional khas Jawa dengan aroma kuat.</p>
+        <button><i class="fas fa-cart-plus"></i> Order</button>
+      </div>
+      <div class="menu-card">
+        <img src="https://picsum.photos/seed/kopi2/400/300" alt="Kopi Hitam">
+        <h3>Kopi Hitam</h3>
+        <p>Kopi klasik dengan cita rasa original tanpa gula.</p>
+        <button><i class="fas fa-cart-plus"></i> Order</button>
+      </div>
+      <div class="menu-card">
+        <img src="https://picsum.photos/seed/kopi3/400/300" alt="Mocha">
+        <h3>Mocha</h3>
+        <p>Perpaduan espresso, cokelat, dan susu lembut.</p>
+        <button><i class="fas fa-cart-plus"></i> Order</button>
+      </div>
+      <div class="menu-card">
+        <img src="https://picsum.photos/seed/kopi4/400/300" alt="Cold Brew">
+        <h3>Cold Brew</h3>
+        <p>Kopi dingin dengan rasa halus dan menyegarkan.</p>
+        <button><i class="fas fa-cart-plus"></i> Order</button>
       </div>
     </div>
-  </section>
 
-  <!-- FAQ -->
-  <section class="section-padding" id="faq">
-    <div class="container">
-      <h2 class="text-center mb-4">FAQ</h2>
-      <div class="accordion" id="faqAccordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-              Metode Pembayaran
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Kami hanya menerima pembayaran secara tunai (cash).
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-              Jam Operasional
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Buka setiap hari pukul 07.00–21.00 WIB.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-              Apakah bisa pesan lewat WhatsApp?
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Bisa! Klik tombol "Chat via WhatsApp" di bawah halaman untuk memesan langsung.
-            </div>
-          </div>
-        </div>
+    <!-- Teh -->
+    <h2><i class="fas fa-leaf"></i> Menu Teh</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <img src="https://picsum.photos/seed/teh1/400/300" alt="Teh Hijau">
+        <h3>Teh Hijau</h3>
+        <p>Teh sehat dengan antioksidan alami.</p>
+        <button><i class="fas fa-cart-plus"></i> Order</button>
+      </div>
+      <div class="menu-card">
+        <img src="https://picsum.photos/seed/teh2/400/300" alt="Teh Hitam">
+        <h3>Teh Hitam</h3>
+        <p>Teh pekat dengan rasa kuat, cocok untuk pagi hari.</p>
+        <button><i class="fas fa-cart-plus"></i> Order</button>
+      </div>
+      <div class="menu-card">
+        <img src="https://picsum.photos/seed/teh3/400/300" alt="Teh Lemon">
+        <h3>Teh Lemon</h3>
+        <p>Segar dan menenangkan, dengan sentuhan lemon.</p>
+        <button><i class="fas fa-cart-plus"></i> Order</button>
+      </div>
+      <div class="menu-card">
+        <img src="https://picsum.photos/seed/teh4/400/300" alt="Teh Herbal">
+        <h3>Teh Herbal</h3>
+        <p>Campuran rempah dan daun herbal khas nusantara.</p>
+        <button><i class="fas fa-cart-plus"></i> Order</button>
+      </div>
+    </div>
+
+    <!-- Jamu -->
+    <h2><i class="fas fa-seedling"></i> Menu Jamu</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <img src="https://picsum.photos/seed/jamu1/400/300" alt="Kunyit Asam">
+        <h3>Kunyit Asam</h3>
+        <p>Minuman tradisional menyegarkan untuk kebugaran tubuh.</p>
+        <button><i class="fas fa-cart-plus"></i> Order</button>
+      </div>
+      <div class="menu-card">
+        <img src="https://picsum.photos/seed/jamu2/400/300" alt="Beras Kencur">
+        <h3>Beras Kencur</h3>
+        <p>Manis dan gurih, cocok untuk pemulihan energi.</p>
+        <button><i class="fas fa-cart-plus"></i> Order</button>
+      </div>
+      <div class="menu-card">
+        <img src="https://picsum.photos/seed/jamu3/400/300" alt="Temulawak">
+        <h3>Temulawak</h3>
+        <p>Baik untuk pencernaan dan memperkuat imun.</p>
+        <button><i class="fas fa-cart-plus"></i> Order</button>
+      </div>
+      <div class="menu-card">
+        <img src="https://picsum.photos/seed/jamu4/400/300" alt="Jahe Merah">
+        <h3>Jahe Merah</h3>
+        <p>Menghangatkan tubuh dan melancarkan pernapasan.</p>
+        <button><i class="fas fa-cart-plus"></i> Order</button>
       </div>
     </div>
   </section>
 
   <!-- Testimoni -->
-  <section class="section-padding bg-white" id="testimoni">
-    <div class="container">
-      <h2 class="text-center mb-5">Testimoni Pelanggan</h2>
-      <div class="row g-4">
-        <!-- Testimoni 1 -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100 text-center">
-            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="rounded-circle mx-auto mt-4" alt="Siti Aminah" style="width:100px; height:100px; object-fit:cover; border: 3px solid #ffc107;">
-            <div class="card-body">
-              <h5 class="card-title">Siti Aminah</h5>
-              <p class="card-text">“Belanja di Warung Najwa nyaman dan lengkap. Harga terjangkau dan pelayanannya ramah banget!”</p>
-            </div>
-          </div>
-        </div>
-        <!-- Testimoni 2 -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100 text-center">
-            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="rounded-circle mx-auto mt-4" alt="Budi Santoso" style="width:100px; height:100px; object-fit:cover; border: 3px solid #ffc107;">
-            <div class="card-body">
-              <h5 class="card-title">Budi Santoso</h5>
-              <p class="card-text">“Saya selalu belanja sembako di sini. Barangnya fresh dan lengkap. Bisa pesan via WhatsApp juga!”</p>
-            </div>
-          </div>
-        </div>
-        <!-- Testimoni 3 -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100 text-center">
-            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="rounded-circle mx-auto mt-4" alt="Rina Marlina" style="width:100px; height:100px; object-fit:cover; border: 3px solid #ffc107;">
-            <div class="card-body">
-              <h5 class="card-title">Rina Marlina</h5>
-              <p class="card-text">“Warungnya bersih, barang-barangnya segar, dan lokasinya strategis. Sangat rekomendasi!”</p>
-            </div>
-          </div>
-        </div>
+  <section class="testimonial-section" id="testimoni">
+    <h2><i class="fas fa-users"></i> Testimoni</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dina" class="testimonial-img">
+        <p>"Tempatnya nyaman banget, cocok buat kerja sambil ngopi."</p>
+        <h4>Dina <span>• Makassar</span></h4>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Andi" class="testimonial-img">
+        <p>"Jamunya enak dan segar, bikin badan enteng."</p>
+        <h4>Andi <span>• Bone</span></h4>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Rina" class="testimonial-img">
+        <p>"Tehnya punya rasa khas, beda dari tempat lain."</p>
+        <h4>Rina <span>• Parepare</span></h4>
       </div>
     </div>
   </section>
+  
+  <section class="faq-section" id="faq">
+  <div class="container">
+    <h2><i class="fas fa-comment-dots"></i> Pertanyaan Umum</h2>
 
-  <!-- Kontak -->
-  <section class="section-padding bg-light" id="kontak">
-    <div class="container">
-      <h2 class="text-center mb-4">Kontak Kami</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-6 text-center">
-          <div class="d-grid gap-3">
-            <a href="https://wa.me/628129925" target="_blank" class="btn btn-success">Chat via WhatsApp</a>
-            <a href="mailto:warungnajwa@gmail.com" class="btn btn-warning text-dark">Kirim Email</a>
-            <a href="https://www.google.com/maps?q=Jl.+Wanogra+Kolon" target="_blank" class="btn btn-secondary">Lihat Lokasi</a>
-          </div>
-        </div>
-      </div>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">1. Apa jam operasional warung kopi ini?</div>
+      <div class="faq-answer">Kami buka setiap hari dari pukul 08.00 hingga 22.00 malam.</div>
     </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">2. Apakah tersedia layanan pesan antar?</div>
+      <div class="faq-answer">Ya, kami menyediakan layanan pesan antar melalui WhatsApp dan ojek online.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">3. Apakah bisa reservasi tempat?</div>
+      <div class="faq-answer">Tentu, silakan reservasi melalui WhatsApp yang tersedia di halaman kontak.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">4. Apakah tersedia menu non-kopi?</div>
+      <div class="faq-answer">Ya, kami juga menyediakan teh, minuman segar, dan makanan ringan.</div>
+    </div>
+  </div>
+  </section>
+
+  <!-- Hubungi Kami -->
+  <section class="contact-form-section" id="kontak">
+    <h2><i class="fas fa-envelope"></i> Hubungi Kami</h2>
+    <form class="contact-form" action="#" method="POST">
+      <input type="text" name="nama" placeholder="Nama Anda" required>
+      <input type="email" name="email" placeholder="Email Anda" required>
+      <textarea name="pesan" rows="5" placeholder="Pesan atau pertanyaan..." required></textarea>
+      <button type="submit"><i class="fas fa-paper-plane"></i> Kirim</button>
+    </form>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Warung Najwa</p>
+    <p>&copy; 2025 Ruang Seduh Walasea</p>
   </footer>
+  
+<script>
+function toggleMenu() {
+  document.getElementById('nav-links').classList.toggle('active');
+}
+  
+function toggleFAQ(clickedItem) {
+  // Ambil semua elemen FAQ
+  const allItems = document.querySelectorAll('.faq-item');
+  
+  allItems.forEach(item => {
+    if (item !== clickedItem) {
+      item.classList.remove('active'); // Tutup semua selain yang diklik
+    }
+  });
 
-  <!-- Modal Promo -->
-  <div class="modal fade" id="promoModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Promo Spesial</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          Belanja minimal 100rb gratis 1L Minyak Goreng! Berlaku hingga akhir bulan.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  // Toggle aktif hanya untuk yang diklik
+  clickedItem.classList.toggle('active');
+}
+</script>
 </body>
 </html>
