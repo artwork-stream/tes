@@ -16,7 +16,9 @@
 --brown-dark: #4e342e;
 --brown-light: #c8ad7f;
 --cream: #f3e5ab;
---text-color: #333;
+--text-color: #f3e5ab;
+--border: 3px solid #4e342e;
+--border-radius: 8px;
 --font-title: 'Playfair Display', serif;
 --font-body: 'Georgia', sans-serif;
 --gradient: linear-gradient(135deg, #f3e5ab, #c8ad7f,#a67b5b, #c3a18f, #f3e5ab);
@@ -50,7 +52,7 @@ section {
 img {
   max-width: 100%;
   display: block;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   margin-left: auto;
   margin-right: auto;
 }
@@ -63,12 +65,12 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 25px;
   margin: 40px 0 20px;
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 12px;
 }
 
 p {
@@ -81,13 +83,13 @@ span {
 }
 
 button {
-  font-size: 14px;
+  font-size: 12px;
   font-family: var(--font-body);
   background-color: var(--brown-dark);
   color: white;
   border: none;
   padding: 8px 14px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   transition: background 0.3s;
   display: inline-flex;
@@ -134,7 +136,7 @@ button:hover {
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   border: 3px solid var(--cream);
   width: 100%;
 }
@@ -149,7 +151,7 @@ button:hover {
   min-width: 100%;
   box-sizing: border-box;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   transition: border 0.3s ease;
   will-change: transform;
   background: var(--brown-dark);
@@ -160,7 +162,7 @@ button:hover {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   object-fit: cover;
 }
 
@@ -169,10 +171,11 @@ button:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 32px;
+  font-size: 30px;
   color: var(--cream);
   background: rgba(0, 0, 0, 0.4);
-  border: none;
+  border-radius: var(--border-radius);
+  border: var(--border);
   padding: 10px;
   margin: 0 10px;
   cursor: pointer;
@@ -180,7 +183,8 @@ button:hover {
   transition: background 0.3s;
 }
 .prev:hover, .next:hover {
-  background: var(--brown-dark);
+  background-color: #a67b5b;
+  color: var(--brown-dark);
 }
 
 .prev { left: 10px; }
@@ -194,16 +198,16 @@ button:hover {
   position: relative;
 }
 .home-section h1 {
-  margin-top: 40px;
+  margin-top: 50px;
   color: var(--cream);
-  font-size: 32px;
+  font-size: 50px;
   font-weight: bold;
 }
 .home-section p {
   max-width: 600px;
   margin: 10px auto;
   color: var(--cream);
-  font-size: 16px;
+  font-size: 12px;
 }
 
 /* Ikon Sosial */
@@ -212,7 +216,7 @@ button:hover {
   display: flex;
   justify-content: center;
   gap: 30px;
-  font-size: 22px;
+  font-size: 25px;
   z-index: 2;
   position: relative;
   flex-wrap: wrap;
@@ -234,10 +238,9 @@ button:hover {
   transform: translate(-50%, -50%);
   background: var(--brown-dark);
   color: var(--cream);
-  border: 3px solid var(--brown-dark);
-  border-radius: 8px;
+  border: var(--border);
   padding: 12px 24px;
-  font-size: 18px;
+  font-size: 12px;
   cursor: pointer;
   z-index: 2;
 }
@@ -265,7 +268,7 @@ button:hover {
   background: var(--cream);
   color: var(--brown-dark);
   padding: 30px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   max-width: 400px;
   width: 90%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -283,7 +286,7 @@ button:hover {
   position: absolute;
   right: 15px;
   top: 10px;
-  font-size: 24px;
+  font-size: 25px;
   cursor: pointer;
 }
 
@@ -310,7 +313,7 @@ button:hover {
 }
 
 .about-title h2 {
-  font-size: 24px;
+  font-size: 25px;
   margin: 0;
   color: #5e3c25;
 }
@@ -337,8 +340,8 @@ button:hover {
 
 .team-card {
   padding: 20px;
-  border: 3px solid var(--brown-dark);
-  border-radius: 12px;
+  border: var(--border);
+  border-radius: var(--border-radius);
   background-color: var(--brown-dark);
   color: var(--cream);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -370,7 +373,7 @@ button:hover {
 }
 
 .menu-title h2 {
-  font-size: 24px;
+  font-size: 25px;
   margin: 0;
   color: #5e3c25;
 }
@@ -390,10 +393,10 @@ button:hover {
   justify-content: space-between; 
   height: 100%;
   min-height: 300px; 
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   padding: 15px;
-  border: 3px solid var(--brown-dark);
-  border-radius: 12px;
+  border: var(--border);
+  border-radius: var(--border-radius);
   background: var(--gradient);
   text-align: center;
   color: var(--brown-dark);
@@ -403,23 +406,23 @@ button:hover {
 .menu-card {
   height: 100%;
   min-height: 300px; 
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 
 .menu-card h3 {
-  font-size: 16px;
+  font-size: 12px;
   margin: 10px 0 5px;
 }
 
 .menu-card p {
   flex-grow: 1;
-  font-size: 13px;
+  font-size: 12px;
   margin-bottom: 12px;
 }
 
 .menu-card button {
   margin-top: auto;
-  border: 3px solid var(--brown-dark);
+  border: var(--border);
   background: var(--brown-dark); 
   color: var(--brown-light); 
 }
@@ -450,7 +453,7 @@ button:hover {
 }
 
 .testimonial-title h2 {
-  font-size: 24px;
+  font-size: 25px;
   margin: 0;
   color: #5e3c25;
 }
@@ -464,9 +467,9 @@ button:hover {
 }
 
 .testimonial-card {
-  border: 3px solid var(--brown-dark);
+  border: var(--border);
   padding: 20px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   background: #a67b5b; 
   color: var(--cream);
 }
@@ -494,7 +497,7 @@ button:hover {
 }
 
 .faq-title h2 {
-  font-size: 24px;
+  font-size: 25px;
   margin: 0;
   color: #5e3c25;
 }
@@ -511,7 +514,7 @@ button:hover {
   padding: 10px 15px;
   margin-bottom: 15px;
   background: #fff5e1;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   transition: background 0.3s ease;
 }
@@ -553,7 +556,7 @@ button:hover {
 }
 
 .contact-title h2 {
-  font-size: 24px;
+  font-size: 25px;
   margin: 0;
   color: #5e3c25;
 }
@@ -564,7 +567,7 @@ button:hover {
 }
 
 .contact-form-section h2 {
-  font-size: 24px;
+  font-size: 25px;
   margin-bottom: 30px;
   color: #5e3c25;
   font-family: var(--font-title);
@@ -581,22 +584,22 @@ button:hover {
 .contact-form input,
 .contact-form textarea {
   padding: 12px;
-  border: 3px solid var(--brown-dark);
-  border-radius: 8px;
+  border: var(--border);
+  border-radius: var(--border-radius);
   background: var(--cream);
   color: var(--brown-dark);
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .contact-form button {
   background: var(--brown-dark); 
   color: var(--cream); 
-  border: 3px solid var(--brown-dark);
+  border: var(--border);
   width: 100%; 
   padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 14px;
+  border-radius: var(--border-radius);
+  font-size: 12px;
   cursor: pointer;
   transition: background 0.3s ease;
   box-sizing: border-box;
@@ -608,12 +611,13 @@ button:hover {
 }
 
 /* ===== Footer ===== */
+
 footer {
   background-color: var(--brown-dark);
   color: var(--cream); 
   text-align: center;
   padding: 20px 10px;
-  font-size: 0.9em;
+  font-size: 12px;
 }
 
 /* ===== Responsive Fixes ===== */
@@ -631,7 +635,7 @@ footer {
   padding: 10px 20px;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 9999;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -645,14 +649,14 @@ footer {
 
 .brand {
   font-family: var(--font-title);
-  font-size: 20px;
+  font-size: 25px;
   color: var(--cream);
 }
 
 .brand p {
   font-family: var(--font-title);
   font-weight: 500;
-  font-size: 20px;
+  font-size: 25px;
   color: var(--cream);
 }
 
@@ -668,16 +672,13 @@ footer {
   text-decoration: none;
   color: var(--cream);
   font-weight: 500;
-  font-size: 20px;
+  font-size: 25px;
   transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
   color: #a67b5b; 
 }
-
-
-
 
 /* Floating Cart Button */
 #cart-toggle-btn {
@@ -686,15 +687,20 @@ footer {
   right: 20px;
   background-color: var(--brown-dark);
   color: var(--cream);
-  border: none;
-  border-radius: 8px;
+  border: var(--border);
+  border-radius: var(--border-radius);
   padding: 16px;
-  font-size: 18px;
+  font-size: 12px;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 #cart-toggle-btn i {
-  font-size: 20px;
+  font-size: 25px;
+}
+
+#cart-toggle-btn:hover {
+  background-color: #a67b5b;
+  color: var(--brown-dark);
 }
 
 /* Floating Cart */
@@ -706,8 +712,8 @@ footer {
   max-height: 500px;
   padding: 20px;
   background: var(--gradient);
-  border: 3px solid var(--brown-dark);
-  border-radius: 12px;
+  border: var(--border);
+  border-radius: var(--border-radius);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   overflow: hidden;
   display: flex;
@@ -728,7 +734,7 @@ footer {
   font-family: var(--font-title);
 }
 .cart-title {
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
   margin: 0;
   font-family: var(--font-title);
@@ -739,9 +745,9 @@ footer {
   padding: 10px;
   margin: 0 12px;
   margin-bottom: 10px; 
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   color: var(--brown-dark);
-  border: 3px solid var(--brown-dark);
+  border: var(--border);
   background-color:var(--cream);
 }
 .cart-total {
@@ -750,9 +756,9 @@ footer {
   font-size: 12px;
   font-weight: bold;
   padding: 10px;
-  border-radius: 8px; 
+  border-radius: var(--border-radius); 
   color: var(--brown-dark);
-  border: 3px solid var(--brown-dark);
+  border: var(--border);
   background-color:var(--cream);
 }
 /* Cart Actions */
@@ -775,23 +781,22 @@ footer {
 
 #cart-items span {
   flex-grow: 1;
-  font-size: 14px;
+  font-size: 12px;
   word-break: break-word;
 }
 
 #cart-items button {
-  background-color: var(--cream);
-  border: 3px solid var(--brown-dark);
-  color: var(--brown-dark);
+  background-color: var(--brown-dark);
+  border: var(--border);
+  color: var(--cream);
   padding: 4px 10px;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   font-size: 12px;
 }
 #cart-items button:hover {
-  background-color: var(--brown-dark);
-  border: 3px solid var(--brown-dark);
-  color: var(--cream);
+  background-color: #a67b5b;
+  color: var(--brown-dark);
 }
 
 #checkout-btn,
@@ -801,28 +806,26 @@ footer {
   border: none;
   font-weight: bold;
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 12px;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   text-align: center;
 }
 #checkout-btn {
-  background-color: var(--cream);
-  border: 3px solid var(--brown-dark);
-  color: var(--brown-dark);
-}
-#clear-cart {
-  background-color: var(--cream);
-  border: 3px solid var(--brown-dark);
-  color: var(--brown-dark);
-}
-#checkout-btn:hover, #clear-cart:hover {
   background-color: var(--brown-dark);
-  border: 3px solid var(--brown-dark);
+  border: var(--border);
   color: var(--cream);
 }
-
+#clear-cart {
+  background-color: var(--brown-dark);
+  border: var(--border);
+  color: var(--cream);
+}
+#checkout-btn:hover, #clear-cart:hover {
+  background-color: #a67b5b;
+  color: var(--brown-dark);
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -832,9 +835,9 @@ footer {
     background: var(--brown-dark);
     position: absolute;
     margin-top: 50px;
-    margin-left: 115px;
+    margin-left: 100px;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
   }
 
   .nav-links.active {
@@ -846,16 +849,16 @@ footer {
   }
 
   .home-section h1 {
-    font-size: 22px;
+    font-size: 25px;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .about-social {
     gap: 25px;
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 </style>
@@ -887,9 +890,6 @@ footer {
 <section class="home-section" id="home">
   <div class="carousel-container">
     <div class="carousel">
-      <div class="slide">
-        <img src="header.png" alt="header">
-      </div>
       <div class="slide">
         <img src="kopi.png" alt="header">
       </div>
@@ -1103,17 +1103,17 @@ footer {
       <div class="testimonial-card">
         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dina" class="testimonial-img">
         <p>“ Tempatnya nyaman banget, cocok buat kerja sambil ngopi. ”</p>
-        <h4>Dina Mariana <span>• Kalimantan Timur</span></h4>
+        <h4>Dina Mariana</h4>
       </div>
       <div class="testimonial-card">
         <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Andi" class="testimonial-img">
         <p>“ Jamunya enak dan segar, bikin badan enteng. ”</p>
-        <h4>Andi Mallarangeng <span>• Sulawesi Selatan</span></h4>
+        <h4>Andi Mallarangeng</h4>
       </div>
       <div class="testimonial-card">
         <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Rina" class="testimonial-img">
         <p>“ Tehnya punya rasa khas, beda dari tempat lain. ”</p>
-        <h4>Rani Amelia <span>• Jakarta Pusat</span></h4>
+        <h4>Rani Amelia</h4>
       </div>
     </div>
   </section>
