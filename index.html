@@ -18,7 +18,7 @@
 --cream: #f3e5ab;
 --text-color: #333;
 --font-title: 'Playfair Display', serif;
---font-body: 'Poppins', sans-serif;
+--font-body: 'Georgia', sans-serif;
 --gradient: linear-gradient(135deg, #f3e5ab, #c8ad7f,#a67b5b, #c3a18f, #f3e5ab);
 }
 
@@ -76,13 +76,18 @@ p {
   text-align: center;
 }
 
+span {
+  margin-bottom: 10px;
+}
+
 button {
   font-size: 14px;
+  font-family: var(--font-body);
   background-color: var(--brown-dark);
   color: white;
   border: none;
   padding: 8px 14px;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s;
   display: inline-flex;
@@ -93,7 +98,7 @@ button {
 }
 
 button i {
-  margin-right: 6px;
+  margin: 0 auto; 
 }
 
 button:hover {
@@ -672,6 +677,153 @@ footer {
 }
 
 
+
+
+/* Floating Cart Button */
+#cart-toggle-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  background-color: var(--brown-dark);
+  color: var(--cream);
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 18px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+#cart-toggle-btn i {
+  font-size: 20px;
+}
+
+/* Floating Cart */
+#floating-cart {
+  position: fixed; 
+  bottom: 110px;
+  right: 20px;
+  width: 300px;
+  max-height: 500px;
+  padding: 20px;
+  background: var(--gradient);
+  border: 3px solid var(--brown-dark);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+#floating-cart.hidden {
+  display: none;
+}
+
+/* Cart Header */
+.cart-header {
+  color: var(--brown-dark);
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-title);
+}
+.cart-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  font-family: var(--font-title);
+}
+.cart-scroll {
+  overflow-y: auto;
+  height: 280px;
+  padding: 10px;
+  margin: 0 12px;
+  margin-bottom: 10px; 
+  border-radius: 8px;
+  color: var(--brown-dark);
+  border: 3px solid var(--brown-dark);
+  background-color:var(--cream);
+}
+.cart-total {
+  text-align: left;
+  margin-bottom: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px; 
+  color: var(--brown-dark);
+  border: 3px solid var(--brown-dark);
+  background-color:var(--cream);
+}
+/* Cart Actions */
+.cart-actions {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#cart-items li {
+  min-height: 50px;
+  height: auto;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+#cart-items span {
+  flex-grow: 1;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+#cart-items button {
+  background-color: var(--cream);
+  border: 3px solid var(--brown-dark);
+  color: var(--brown-dark);
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+#cart-items button:hover {
+  background-color: var(--brown-dark);
+  border: 3px solid var(--brown-dark);
+  color: var(--cream);
+}
+
+#checkout-btn,
+#clear-cart {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  font-family: var(--font-body);
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 8px;
+  text-align: center;
+}
+#checkout-btn {
+  background-color: var(--cream);
+  border: 3px solid var(--brown-dark);
+  color: var(--brown-dark);
+}
+#clear-cart {
+  background-color: var(--cream);
+  border: 3px solid var(--brown-dark);
+  color: var(--brown-dark);
+}
+#checkout-btn:hover, #clear-cart:hover {
+  background-color: var(--brown-dark);
+  border: 3px solid var(--brown-dark);
+  color: var(--cream);
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {
@@ -806,104 +958,137 @@ footer {
   </div>
   </section>
 
-  <!-- Menu Section -->
-  <section class="menu-section" id="menu">
-    <div class="menu-title">
-    <i class="fas fa-mug-hot"></i> 
+<!-- Menu Section -->
+<section class="menu-section" id="menu">
+  <!-- Menu Kopi -->
+  <div class="menu-title">
+    <i class="fas fa-mug-hot"></i>
     <h2>Menu Kopi</h2>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img src="https://picsum.photos/seed/kopi1/400/300" alt="Kopi Tubruk">
+      <h3>Kopi Tubruk</h3>
+      <p>Kopi tradisional khas Jawa dengan aroma kuat.</p>
+      <span class="price">Rp 10.000</span>
+      <button><i class="fas fa-cart-plus"></i></button>
     </div>
-    <div class="menu-grid">
-      <!-- Kopi -->
-      <div class="menu-card">
-        <img src="https://picsum.photos/seed/kopi1/400/300" alt="Kopi Tubruk">
-        <h3>Kopi Tubruk</h3>
-        <p>Kopi tradisional khas Jawa dengan aroma kuat.</p>
-        <button><i class="fas fa-cart-plus"></i> Order</button>
-      </div>
-      <div class="menu-card">
-        <img src="https://picsum.photos/seed/kopi2/400/300" alt="Kopi Hitam">
-        <h3>Kopi Hitam</h3>
-        <p>Kopi klasik dengan cita rasa original tanpa gula.</p>
-        <button><i class="fas fa-cart-plus"></i> Order</button>
-      </div>
-      <div class="menu-card">
-        <img src="https://picsum.photos/seed/kopi3/400/300" alt="Mocha">
-        <h3>Mocha</h3>
-        <p>Perpaduan espresso, cokelat, dan susu lembut.</p>
-        <button><i class="fas fa-cart-plus"></i> Order</button>
-      </div>
-      <div class="menu-card">
-        <img src="https://picsum.photos/seed/kopi4/400/300" alt="Cold Brew">
-        <h3>Cold Brew</h3>
-        <p>Kopi dingin dengan rasa halus dan menyegarkan.</p>
-        <button><i class="fas fa-cart-plus"></i> Order</button>
-      </div>
+    <div class="menu-card">
+      <img src="https://picsum.photos/seed/kopi2/400/300" alt="Kopi Hitam">
+      <h3>Kopi Hitam</h3>
+      <p>Kopi klasik dengan cita rasa original tanpa gula.</p>
+      <span class="price">Rp 12.000</span>
+      <button><i class="fas fa-cart-plus"></i></button>
     </div>
+    <div class="menu-card">
+      <img src="https://picsum.photos/seed/kopi3/400/300" alt="Mocha">
+      <h3>Mocha</h3>
+      <p>Perpaduan espresso, cokelat, dan susu lembut.</p>
+      <span class="price">Rp 18.000</span>
+      <button><i class="fas fa-cart-plus"></i></button>
+    </div>
+    <div class="menu-card">
+      <img src="https://picsum.photos/seed/kopi4/400/300" alt="Cold Brew">
+      <h3>Cold Brew</h3>
+      <p>Kopi dingin dengan rasa halus dan menyegarkan.</p>
+      <span class="price">Rp 20.000</span>
+      <button><i class="fas fa-cart-plus"></i></button>
+    </div>
+  </div>
 
-    <!-- Teh -->
-    <div class="menu-title">
-    <i class="fas fa-leaf"></i> 
+  <!-- Menu Teh -->
+  <div class="menu-title">
+    <i class="fas fa-leaf"></i>
     <h2>Menu Teh</h2>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img src="https://picsum.photos/seed/teh1/400/300" alt="Teh Hijau">
+      <h3>Teh Hijau</h3>
+      <p>Teh sehat dengan antioksidan alami.</p>
+      <span class="price">Rp 8.000</span>
+      <button><i class="fas fa-cart-plus"></i></button>
     </div>
-    <div class="menu-grid">
-      <div class="menu-card">
-        <img src="https://picsum.photos/seed/teh1/400/300" alt="Teh Hijau">
-        <h3>Teh Hijau</h3>
-        <p>Teh sehat dengan antioksidan alami.</p>
-        <button><i class="fas fa-cart-plus"></i> Order</button>
-      </div>
-      <div class="menu-card">
-        <img src="https://picsum.photos/seed/teh2/400/300" alt="Teh Hitam">
-        <h3>Teh Hitam</h3>
-        <p>Teh pekat dengan rasa kuat, cocok untuk pagi hari.</p>
-        <button><i class="fas fa-cart-plus"></i> Order</button>
-      </div>
-      <div class="menu-card">
-        <img src="https://picsum.photos/seed/teh3/400/300" alt="Teh Lemon">
-        <h3>Teh Lemon</h3>
-        <p>Segar dan menenangkan, dengan sentuhan lemon.</p>
-        <button><i class="fas fa-cart-plus"></i> Order</button>
-      </div>
-      <div class="menu-card">
-        <img src="https://picsum.photos/seed/teh4/400/300" alt="Teh Herbal">
-        <h3>Teh Herbal</h3>
-        <p>Campuran rempah dan daun herbal khas nusantara.</p>
-        <button><i class="fas fa-cart-plus"></i> Order</button>
-      </div>
+    <div class="menu-card">
+      <img src="https://picsum.photos/seed/teh2/400/300" alt="Teh Hitam">
+      <h3>Teh Hitam</h3>
+      <p>Teh pekat dengan rasa kuat, cocok untuk pagi hari.</p>
+      <span class="price">Rp 9.000</span>
+      <button><i class="fas fa-cart-plus"></i></button>
     </div>
+    <div class="menu-card">
+      <img src="https://picsum.photos/seed/teh3/400/300" alt="Teh Lemon">
+      <h3>Teh Lemon</h3>
+      <p>Segar dan menenangkan, dengan sentuhan lemon.</p>
+      <span class="price">Rp 10.000</span>
+      <button><i class="fas fa-cart-plus"></i></button>
+    </div>
+    <div class="menu-card">
+      <img src="https://picsum.photos/seed/teh4/400/300" alt="Teh Herbal">
+      <h3>Teh Herbal</h3>
+      <p>Campuran rempah dan daun herbal khas nusantara.</p>
+      <span class="price">Rp 11.000</span>
+      <button><i class="fas fa-cart-plus"></i></button>
+    </div>
+  </div>
 
-    <!-- Jamu -->
-    <div class="menu-title">
-    <i class="fas fa-seedling"></i> 
+  <!-- Menu Jamu -->
+  <div class="menu-title">
+    <i class="fas fa-seedling"></i>
     <h2>Menu Jamu</h2>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img src="https://picsum.photos/seed/jamu1/400/300" alt="Kunyit Asam">
+      <h3>Kunyit Asam</h3>
+      <p>Minuman tradisional menyegarkan untuk kebugaran tubuh.</p>
+      <span class="price">Rp 7.000</span>
+      <button><i class="fas fa-cart-plus"></i></button>
     </div>
-    <div class="menu-grid">
-      <div class="menu-card">
-        <img src="https://picsum.photos/seed/jamu1/400/300" alt="Kunyit Asam">
-        <h3>Kunyit Asam</h3>
-        <p>Minuman tradisional menyegarkan untuk kebugaran tubuh.</p>
-        <button><i class="fas fa-cart-plus"></i> Order</button>
-      </div>
-      <div class="menu-card">
-        <img src="https://picsum.photos/seed/jamu2/400/300" alt="Beras Kencur">
-        <h3>Beras Kencur</h3>
-        <p>Manis dan gurih, cocok untuk pemulihan energi.</p>
-        <button><i class="fas fa-cart-plus"></i> Order</button>
-      </div>
-      <div class="menu-card">
-        <img src="https://picsum.photos/seed/jamu3/400/300" alt="Temulawak">
-        <h3>Temulawak</h3>
-        <p>Baik untuk pencernaan dan memperkuat imun.</p>
-        <button><i class="fas fa-cart-plus"></i> Order</button>
-      </div>
-      <div class="menu-card">
-        <img src="https://picsum.photos/seed/jamu4/400/300" alt="Jahe Merah">
-        <h3>Jahe Merah</h3>
-        <p>Menghangatkan tubuh dan melancarkan pernapasan.</p>
-        <button><i class="fas fa-cart-plus"></i> Order</button>
-      </div>
+    <div class="menu-card">
+      <img src="https://picsum.photos/seed/jamu2/400/300" alt="Beras Kencur">
+      <h3>Beras Kencur</h3>
+      <p>Manis dan gurih, cocok untuk pemulihan energi.</p>
+      <span class="price">Rp 8.000</span>
+      <button><i class="fas fa-cart-plus"></i></button>
     </div>
-  </section>
+    <div class="menu-card">
+      <img src="https://picsum.photos/seed/jamu3/400/300" alt="Temulawak">
+      <h3>Temulawak</h3>
+      <p>Baik untuk pencernaan dan memperkuat imun.</p>
+      <span class="price">Rp 8.000</span>
+      <button><i class="fas fa-cart-plus"></i></button>
+    </div>
+    <div class="menu-card">
+      <img src="https://picsum.photos/seed/jamu4/400/300" alt="Jahe Merah">
+      <h3>Jahe Merah</h3>
+      <p>Menghangatkan tubuh dan melancarkan pernapasan.</p>
+      <span class="price">Rp 9.000</span>
+      <button><i class="fas fa-cart-plus"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- Floating Cart Toggle Button -->
+<button id="cart-toggle-btn">
+  <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+</button>
+
+<!-- Floating Cart Box -->
+<div id="floating-cart" class="hidden">
+
+  <div class="cart-scroll">
+    <ul id="cart-items"></ul>
+  </div>
+
+  <div class="cart-actions">
+    <div class="cart-total">
+      <strong>Total : Rp <span id="cart-total">0</span></strong>
+    </div>
+    <a id="checkout-btn" href="#" target="_blank">Order via WhatsApp</a>
+    <button id="clear-cart">Batalkan Semua</button>
+  </div>
+</div>
 
   <!-- Testimoni -->
   <section class="testimonial-section" id="testimoni">
@@ -914,17 +1099,17 @@ footer {
     <div class="testimonial-grid">
       <div class="testimonial-card">
         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dina" class="testimonial-img">
-        <p>"Tempatnya nyaman banget, cocok buat kerja sambil ngopi."</p>
-        <h4>Dina Mariana<span>• Kalimantan Timur</span></h4>
+        <p>“ Tempatnya nyaman banget, cocok buat kerja sambil ngopi. ”</p>
+        <h4>Dina Mariana <span>• Kalimantan Timur</span></h4>
       </div>
       <div class="testimonial-card">
         <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Andi" class="testimonial-img">
-        <p>"Jamunya enak dan segar, bikin badan enteng."</p>
+        <p>“ Jamunya enak dan segar, bikin badan enteng. ”</p>
         <h4>Andi Mallarangeng <span>• Sulawesi Selatan</span></h4>
       </div>
       <div class="testimonial-card">
         <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Rina" class="testimonial-img">
-        <p>"Tehnya punya rasa khas, beda dari tempat lain."</p>
+        <p>“ Tehnya punya rasa khas, beda dari tempat lain. ”</p>
         <h4>Rani Amelia <span>• Jakarta Pusat</span></h4>
       </div>
     </div>
@@ -969,7 +1154,7 @@ footer {
       <input type="subjek" name="subjek" placeholder="Subjek Anda" required>
       <input type="email" name="email" placeholder="Email Anda" required>
       <textarea name="pesan" rows="5" placeholder="Pesan Anda" required></textarea>
-      <button type="submit"><i class="fas fa-paper-plane"></i> Kirim</button>
+      <button type="submit"> Kirim Pesan</button>
     </form>
   </section>
 
@@ -977,7 +1162,87 @@ footer {
   <footer>
     <p>&copy; 2025 Ruang Seduh Walasea</p>
   </footer>
-  
+<script>
+let cart = [];
+
+const cartToggleBtn = document.getElementById('cart-toggle-btn');
+const cartBox = document.getElementById('floating-cart');
+const cartCount = document.getElementById('cart-count');
+const cartItemsList = document.getElementById('cart-items');
+const clearCartBtn = document.getElementById('clear-cart');
+const checkoutBtn = document.getElementById('checkout-btn');
+
+// Buka/tutup cart
+cartToggleBtn.addEventListener('click', () => {
+  cartBox.classList.toggle('hidden');
+});
+
+// Tambah item ke cart
+function addToCart(name, price) {
+  const existing = cart.find(item => item.name === name);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ name, qty: 1, price });
+  }
+  updateCartUI();
+}
+
+// Hapus item
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCartUI();
+}
+
+// Update cart UI
+function updateCartUI() {
+  cartItemsList.innerHTML = '';
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    const itemTotal = item.qty * item.price;
+    total += itemTotal;
+
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span>${item.name} x${item.qty} = Rp${itemTotal.toLocaleString()}</span>
+      <button class="remove-btn" onclick="removeItem(${index})">Batalkan</button>
+    `;
+    cartItemsList.appendChild(li);
+  });
+
+  cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+  document.getElementById('cart-total').textContent = total.toLocaleString();
+
+  if (cart.length > 0) {
+    let msg = 'Halo! Saya ingin memesan:\n\n';
+    cart.forEach(item => {
+      msg += `- ${item.name} x${item.qty} = Rp${(item.qty * item.price).toLocaleString()}\n`;
+    });
+    msg += `\nTotal: Rp${total.toLocaleString()}`;
+    checkoutBtn.href = `https://wa.me/+15555555555?text=${encodeURIComponent(msg)}`;
+  } else {
+    checkoutBtn.href = '#';
+  }
+}
+
+// Kosongkan cart
+clearCartBtn.addEventListener('click', () => {
+  cart = [];
+  updateCartUI();
+});
+
+// Deteksi tombol menu + ambil harga dari HTML
+document.querySelectorAll('.menu-card button').forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.menu-card');
+    const name = card.querySelector('h3').textContent;
+    const priceText = card.querySelector('.price').textContent.replace(/[^\d]/g, '');
+    const price = parseInt(priceText);
+    addToCart(name, price);
+  });
+});
+</script>
 <script>
   const carousel = document.querySelector('.carousel');
   const images = document.querySelectorAll('.carousel img');
