@@ -114,6 +114,7 @@ button:hover {
 .home-section h1 {
   font-size: 28px;
   font-weight: bold;
+  margin-top: 30px;
   margin-bottom: 10px;
 }
 
@@ -470,15 +471,76 @@ footer {
   font-size: 0.9em;
 }
 
-/* Tombol */
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 10px;
+  transition: border 0.3s ease;
+  will-change: transform;
+  background: var(--brown-dark);
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* Tombol Geser */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Tombol Promo di Tengah */
 .btn-promo {
-  margin-top: 40px;
-  padding: 10px 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: var(--brown-dark);
   color: var(--cream);
   border: 3px solid var(--brown-dark);
   border-radius: 8px;
   cursor: pointer;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .btn-promo:hover {
@@ -643,32 +705,45 @@ footer {
   </div>
   </header>
   
-  <!-- Home Section -->
   <section class="home-section" id="home">
-    <div class="home-content">
-      <img src="https://picsum.photos/seed/kopi/1200/500" alt="Banner">
-      <h1>RUANG SEDUH</h1>
-      <p>Nikmati seduhan kopi, teh dan jamu, khas Indonesia dengan cita rasa Nusantara.</p>
-      <div class="home-social">
-      <a href="https://wa.me/6281234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="mailto:info@walasea.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://goo.gl/maps/xyz" target="_blank" aria-label="Lokasi"><i class="fas fa-map-marker-alt"></i></a>
-      <a href="https://instagram.com/walasea" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-    <br>
-    <!-- Tombol -->
+  <div class="carousel-container">
+    <div class="carousel">
+  <div class="slide">
+    <img src="https://picsum.photos/seed/1/1200/500" alt="Slide 1">
+  </div>
+  <div class="slide">
+    <img src="https://picsum.photos/seed/2/1200/500" alt="Slide 2">
+  </div>
+  <div class="slide">
+    <img src="https://picsum.photos/seed/3/1200/500" alt="Slide 3">
+  </div>
+  </div>
+    <!-- Tombol Promo di Tengah -->
     <button id="openModal" class="btn-promo">Lihat Promo</button>
 
-    <!-- Modal -->
-    <div id="promoModal" class="modal">
+    <!-- Navigasi Manual -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <h1>RUANG SEDUH</h1>
+  <p>Nikmati seduhan kopi, teh dan jamu, khas Indonesia dengan cita rasa Nusantara.</p>
+  
+  <div class="home-social">
+    <a href="https://wa.me/6281234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:info@walasea.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    <a href="https://goo.gl/maps/xyz" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+    <a href="https://instagram.com/walasea" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <!-- Modal -->
+  <div id="promoModal" class="modal">
     <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>Promo Spesial Hari Ini!</h3>
-    <p>Dapatkan diskon 20% untuk semua menu minuman hingga jam 5 sore!</p>
-    <!-- Tambahkan konten promo lainnya di sini -->
+      <span class="close">&times;</span>
+      <h3>Promo Spesial Hari Ini!</h3>
+      <p>Dapatkan diskon 20% untuk semua menu minuman hingga jam 5 sore!</p>
     </div>
-    </div>
+  </div>
   </section>
 
   <!-- Tentang Kami -->
@@ -875,6 +950,29 @@ footer {
   </footer>
   
 <script>
+  const carousel = document.querySelector('.carousel');
+  const images = document.querySelectorAll('.carousel img');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+
+  let index = 0;
+
+  function showSlide(i) {
+    if (i < 0) index = images.length - 1;
+    else if (i >= images.length) index = 0;
+    else index = i;
+
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  prevBtn.addEventListener('click', () => showSlide(index - 1));
+  nextBtn.addEventListener('click', () => showSlide(index + 1));
+
+  // Auto-scroll
+  setInterval(() => {
+    showSlide(index + 1);
+  }, 5000); // 5 detik
+  
 function toggleMenu() {
   const nav = document.getElementById('nav-links');
   nav.classList.toggle('active');
