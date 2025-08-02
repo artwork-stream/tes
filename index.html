@@ -176,14 +176,14 @@ button:hover {
 .dots span {
   width: 10px;
   height: 10px;
-  background: #aaa;
+  background: var(--brown-dark);
   border-radius: 50%;
   display: block;
   cursor: pointer;
 }
 
 .dots .active {
-  background: #333;
+  background: var(--cream);
 }
 
 /* Konten Teks */
@@ -228,6 +228,7 @@ button:hover {
 }
 
 .promo-buttons {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,8 +236,9 @@ button:hover {
   margin: 20px auto;
   max-width: 300px;
   text-align: center;
+  z-index: 3;
 }
-  
+
 .btn-promo {
   background: var(--brown-dark);
   color: var(--cream);
@@ -248,11 +250,11 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-top: 20px;
-  z-index: 3;
   text-decoration: none;
   transition: 0.3s;
+  height: 45px;       
+  width: 100%;   
+  margin-top: 20px;
 }
 
 .btn-promo:hover {
