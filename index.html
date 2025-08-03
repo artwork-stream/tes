@@ -16,7 +16,7 @@
 --brown-dark: #4e342e;
 --brown-light: #c8ad7f;
 --cream: #f3e5ab;
---text-color: #f3e5ab;
+--brown: #a67b5b;
 --border: 3px solid #4e342e;
 --border-radius: 8px;
 --font-title: 'Playfair Display', serif;
@@ -35,15 +35,17 @@
 }
 
 body {
+  position: relative;
   font-family: var(--font-body);
   font-size: 12px;
   line-height: 1.6;
   background: var(--gradient);
-  color: var(--text-color);
+  color: var(--cream);
   text-align: center;
 }
 
 section {
+  position: relative;
   padding: 40px 20px;
   max-width: 1200px;
   margin: auto;
@@ -117,7 +119,6 @@ button:hover {
   overflow: hidden;
 }
 
-/* Overlay gelap agar teks & icon tampak jelas */
 .home-section::before {
   content: "";
   position: absolute;
@@ -183,22 +184,23 @@ button:hover {
 }
 
 .dots .active {
-  background: var(--cream);
+  background: var(--brown);
 }
 
-/* Konten Teks */
 .home-section h1,
 .home-section p {
   text-align: center;
   z-index: 2;
   position: relative;
 }
+
 .home-section h1 {
   margin-top: 50px;
   color: var(--cream);
   font-size: 50px;
   font-weight: bold;
 }
+
 .home-section p {
   max-width: 600px;
   margin: 10px auto;
@@ -206,7 +208,6 @@ button:hover {
   font-size: 12px;
 }
 
-/* Ikon Sosial */
 .home-social {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -218,10 +219,12 @@ button:hover {
   position: relative;
   flex-wrap: wrap;
 }
+
 .home-social a {
   color: var(--cream);
   transition: transform 0.2s, color 0.2s;
 }
+
 .home-social a:hover {
   color: var(--brown-dark);
   transform: scale(1.2);
@@ -258,11 +261,10 @@ button:hover {
 }
 
 .btn-promo:hover {
-  background-color: #a67b5b;
+  background-color: var(--brown);
   color: var(--brown-dark);
 }
 
-/* Modal Background */
 .modal {
   display: none;
   position: fixed;
@@ -276,7 +278,6 @@ button:hover {
   align-items: center;
 }
 
-/* Modal Box */
 .modal-content {
   background: var(--cream);
   color: var(--brown-dark);
@@ -294,7 +295,6 @@ button:hover {
   text-align: center;
 }
 
-/* Tombol Close Modal */
 .modal-content .close {
   position: absolute;
   right: 15px;
@@ -446,7 +446,7 @@ button:hover {
 }
 
 .menu-card button:hover {
-  background-color: #a67b5b; 
+  background-color: var(--brown); 
   color: var(--brown-dark); 
 }
 
@@ -488,7 +488,7 @@ button:hover {
   border: var(--border);
   padding: 20px;
   border-radius: var(--border-radius);
-  background: #a67b5b; 
+  background: var(--brown); 
   color: var(--cream);
 }
 
@@ -624,7 +624,7 @@ button:hover {
 }
 
 .contact-form button:hover {
-  background-color: #a67b5b; 
+  background-color: var(--brown); 
   color: var(--brown-dark); 
 }
 
@@ -645,7 +645,7 @@ footer {
   height: 50px;
   width: 50px;
   font-size: 30px;
-  margin-right: 15px;
+  right: 20px;
   margin: 0;
   color: var(--cream);
   background-color: var(--brown-dark);
@@ -654,7 +654,7 @@ footer {
 }
 
 .hamburger:hover {
-  background-color: #a67b5b; 
+  background-color: var(--brown); 
   border: 3px solid var(--brown-dark);
   color: var(--brown-dark); 
 }
@@ -714,7 +714,7 @@ footer {
   position: fixed;
   height: 55px;
   width: 55px;
-  bottom: 30px;
+  bottom: 20px;
   right: 20px;
   background-color: var(--brown-dark);
   color: var(--cream);
@@ -730,14 +730,14 @@ footer {
 }
 
 #cart-toggle-btn:hover {
-  background-color: #a67b5b;
+  background-color: var(--brown);
   color: var(--brown-dark);
 }
 
 /* Floating Cart */
 #floating-cart {
   position: fixed; 
-  bottom: 100px;
+  bottom: 90px;
   right: 20px;
   width: 300px;
   max-height: 500px;
@@ -826,7 +826,7 @@ footer {
   font-size: 12px;
 }
 #cart-items button:hover {
-  background-color: #a67b5b;
+  background-color: var(--brown);
   color: var(--brown-dark);
 }
 
@@ -854,7 +854,7 @@ footer {
   color: var(--cream);
 }
 #checkout-btn:hover, #clear-cart:hover {
-  background-color: #a67b5b;
+  background-color: var(--brown);
   color: var(--brown-dark);
 }
 
@@ -863,7 +863,7 @@ footer {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: #a67b5b;
+    background: var(--brown);
     position: absolute;
     margin-top: 50px;
     margin-left: 100px;
